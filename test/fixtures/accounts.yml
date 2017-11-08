@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  currency: MyString
+  deposit_term: 1
+  term_type: 1
+  balence: 9.99
+  user: one
+
+two:
+  currency: MyString
+  deposit_term: 1
+  term_type: 1
+  balence: 9.99
+  user: two

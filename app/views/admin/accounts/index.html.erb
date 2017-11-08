@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Họ Tên</th>
+      <th>CMND/Passport</th>
+      <th>Số điện thoại</th>
+      <th>Account ID</th>
+      <th>Loại tiền tệ</th>
+      <th>Loại tài khoản</th>
+      <th>Kỳ hạn gửi</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @accounts.each do |acc| %>
+      <tr>
+        <td><%= acc.user.id %></td>
+        <td><%= acc.user.fullname %></td>
+        <td><%= acc.user.NIC %></td>
+        <td><%= acc.user.numberphone %></td>
+        <td><%= acc.acc_id %></td>
+        <td><%= acc.currency %></td>
+        <td><%= acc.term_type %></td>
+        <td><%= acc.deposit_term %></td>
+        <td><%= link_to 'Cofirm', confirm_admin_account_path(acc) unless acc.confirmed_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

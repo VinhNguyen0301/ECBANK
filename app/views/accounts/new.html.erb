@@ -1,0 +1,44 @@
+<h1> Tạo tài khoản</h1>
+<%= form_for @account ,:html => {class: "col s12"}  do|f| %>
+  <div class="row">
+    <%= f.fields_for :user do |c| %>
+      <div class="input-field col s12">
+        <%= c.text_field :fullname %>
+        <%= c.label :fullname,'Họ và Tên' %>
+      </div>
+      <div class="input-field col s12">
+        <%= c.text_field :NIC %>
+        <%= c.label :NIC,'CMND/Passport' %>
+      </div>
+      <div class="input-field col s12">
+        <%= c.date_field :date_issue, class: "datepicker" %>
+        <%= c.label :date_issue,'Ngày cấp' %>
+      </div>
+      <div class="input-field col s12">
+        <%= c.text_field :numberphone %>
+        <%= c.label :numberphone,'Số điện thoại' %>
+      </div>
+      <div class="input-field col s12">
+        <%= c.text_field :email %>
+        <%= c.label :email,'Email' %>
+      </div>
+      <div class="input-field col s12">
+        <%= c.text_field :address %>
+        <%= c.label :address,'Địa chỉ',  class: 'materialize-textarea'%>
+      </div>
+    <% end %>
+    <div class="input-field col s12 m12">
+      <%= f.number_field :balance%>
+      <%= f.label :balance, 'Số tiền gửi' %>
+    </div>
+    <div class="input-field col s12 m3">
+      <%= f.select(:term_type, [['Tài khoản có kỳ hạn', 1], ['Tài khoản linh hoạt',2]]) %>
+    </div>
+    <div class="input-field col s12 m3">
+      <%= f.select(:deposit_term, [['1 tháng', 1], ['2 tháng',2]]) %>
+    </div>
+  </div>
+
+  <%= f.submit 'Tạo tài khoản', class: 'waves-effect waves-light btn-large' %>
+<% end %>
+

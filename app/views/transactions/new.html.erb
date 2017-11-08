@@ -1,0 +1,17 @@
+<h1>Tranfer</h1>
+<%= form_for @trans, :html => {class: "col s12"} do |f| %>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.text_field :amount %> 
+      <%= f.label :amount, 'Số tiền gửi' %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.text_field :from_id %> 
+      <%= f.label :from_id, 'Số tài khoản người gửi' %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.text_field :to_id %> 
+      <%= f.label :to_id, 'Số tài khoản người nhận' %>
+    </div>
+  </div>
+<% end %>
